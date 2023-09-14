@@ -1,0 +1,119 @@
+:root {
+    --main-background-color: black;
+}
+
+html,
+body {
+    background-color: var(--main-background-color);
+    margin: 0;
+    padding: 0;
+}
+
+.vertical-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    height: 90vh;
+}
+
+.horizontal-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    width: 100vh;
+}
+
+h1 {
+    margin: 0;
+    color: orange;
+    text-align: center;
+    font-size: 15vh;
+    user-select: none;
+    position: relative;
+    transition: color 0.25s;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    z-index: 5;
+}
+
+h1:hover {
+    cursor: pointer;
+    color: black;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2.5%;
+    background-color: orange;
+    left: 0;
+    bottom: 0;
+    transition: height 0.25s;
+    z-index: -1;
+}
+
+h1:hover::after {
+    height: 100%;
+}
+
+button {
+    position: relative;
+    width: 32.5vh;
+    height: 10vh;
+    background-color: var(--main-background-color);
+    color: orange;
+    border: 0.75vh solid orange;
+    font-size: 5vh;
+    transition: color 0.25s, background-color 0.25s;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: orange;
+    color: var(--main-background-color);
+}
+
+#footer {
+    color: orange;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    text-align: center;
+    padding: 1vh;
+    text-decoration: underline;
+}
+
+#footer:hover {
+    color: orangered;
+    cursor: pointer;
+}
+
+#field-canvas {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#field-canvas:hover {
+    cursor: pointer;
+}
+
+.editor-sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 15vw;
+    border-right: 1vh solid orange;
+}
+
+.editor-button {
+    width: 13vw;
+    margin: 1vw;
+    font-size: 2.5vw;
+}
