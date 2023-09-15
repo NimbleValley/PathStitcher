@@ -1,5 +1,6 @@
 :root {
     --main-background-color: black;
+    --light-orange: rgb(255, 194, 125);
 }
 
 html,
@@ -7,6 +8,7 @@ body {
     background-color: var(--main-background-color);
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 .vertical-container {
@@ -103,7 +105,7 @@ button:hover {
     cursor: pointer;
 }
 
-.editor-sidebar {
+#editor-sidebar {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -116,4 +118,64 @@ button:hover {
     width: 13vw;
     margin: 1vw;
     font-size: 2.5vw;
+    user-select: none;
+}
+
+#editor-bottom-bar {
+    position: absolute;
+    width: 85vw;
+    height: 12.5vh;
+    border-top: solid 0.5vh orange;
+    bottom: 0;
+    right: 0;
+    display: flex;
+}
+
+h2 {
+    color: orange;
+    margin-left: 2vw;
+    transition: 0.15s color;
+}
+
+h2:hover {
+    cursor: pointer;
+    color: var(--light-orange);
+}
+
+#coordinate-fieldset {
+    border: solid 0.5vh var(--light-orange);
+    color: var(--light-orange);
+    text-align: center;
+    margin-top: 2vh;
+    font-size: 2.5vw;
+    width: 10vw;
+}
+
+.coord-input {
+    width: 70%;
+    background-color: var(--main-background-color);
+    border: 0.4vh solid var(--light-orange);
+    transition: background-color 0.15s, color 0.15s;
+    color: var(--light-orange);
+    font-size: 1.5vw;
+}
+
+.coord-input:hover {
+    cursor: pointer;
+    background-color: var(--light-orange);
+    color: black;
+}
+
+.coord-container {
+    width: 100%;
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+    align-items: center;
+}
+
+p {
+    font-size: 1.75vw;
+    margin: 0;
 }

@@ -11,12 +11,29 @@
 
 <body>
 
-    <canvas id="field-canvas" onmousedown="startDrag(event)"></canvas>
+    <canvas id="field-canvas" onmousedown="startDrag(event)" onmouseup="removeDrag()"></canvas>
 
-    <div class="editor-sidebar">
+    <div id="editor-sidebar">
         <button class="editor-button">Clear</button>
-        <button class="editor-button">Set Size</button>
+        <button class="editor-button" onclick="setRobotSize()">Set Size</button>
+        <button class="editor-button">Mirror</button>
         <button class="editor-button">Save File</button>
+        <fieldset id="coordinate-fieldset">
+            <legend>Coords</legend>
+            <div class="coord-container">
+                <p>X:</p>
+                <input type="text" class="coord-input" id="coord-x-input" onchange="setCoords()">
+            </div>
+            <div class="coord-container">
+                <p>Y:</p>
+                <input type="text" class="coord-input" id="coord-y-input" onchange="setCoords()">
+            </div>
+        </fieldset>
+    </div>
+
+    <div id="editor-bottom-bar">
+        <h2 id="robot-x-text" onclick="navigator.clipboard.writeText(this.innerText.substring(8));">Robot X: </h2>
+        <h2 id="robot-y-text" onclick="navigator.clipboard.writeText(this.innerText.substring(8));">Robot Y: </h2>
     </div>
 
 </body>
