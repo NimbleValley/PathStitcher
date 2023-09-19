@@ -1,6 +1,11 @@
 :root {
     --main-background-color: black;
-    --light-orange: rgb(255, 194, 125);
+    --light-orange: orange;
+}
+
+@font-face {
+    font-family: BDNippori;
+    src: url("BD_Nippori_05.otf") format("opentype");
 }
 
 html,
@@ -9,6 +14,8 @@ body {
     margin: 0;
     padding: 0;
     user-select: none;
+    border-radius: 0;
+    font-family: BDNippori !important;
 }
 
 .vertical-container {
@@ -65,13 +72,14 @@ h1:hover::after {
 
 button {
     position: relative;
-    width: 32.5vh;
+    width: 35vh;
     height: 10vh;
     background-color: var(--main-background-color);
     color: orange;
-    border: 0.75vh solid orange;
-    font-size: 5vh;
+    border: 0.35vw solid orange;
+    font-size: 4vh;
     transition: color 0.25s, background-color 0.25s;
+    font-family: BDNippori !important;
 }
 
 button:hover {
@@ -88,6 +96,7 @@ button:hover {
     text-align: center;
     padding: 1vh;
     text-decoration: underline;
+    font-size: 1.75vh !important;
 }
 
 #footer:hover {
@@ -117,8 +126,21 @@ button:hover {
 .editor-button {
     width: 13vw;
     margin: 1vw;
-    font-size: 2.5vw;
+    font-size: 1.45vw;
+    height: 4.5vw;
+    margin: 0.75vw;
     user-select: none;
+}
+
+.animation-button {
+    width: 7.5vh;
+    height: 7.5vh;
+    left: 2.5vh;
+    top: 2.5vh;
+    text-align: center;
+    margin-right: 2vw;
+    border: solid 0.25vh orange;
+    font-size: 3.5vh;
 }
 
 #editor-bottom-bar {
@@ -135,6 +157,7 @@ h2 {
     color: orange;
     margin-left: 2vw;
     transition: 0.15s color;
+    font-size: 1.75vw;
 }
 
 h2:hover {
@@ -147,8 +170,9 @@ h2:hover {
     color: var(--light-orange);
     text-align: center;
     margin-top: 2vh;
-    font-size: 2.5vw;
+    font-size: 2vw;
     width: 10vw;
+    align-self: center;
 }
 
 .coord-input {
@@ -158,6 +182,8 @@ h2:hover {
     transition: background-color 0.15s, color 0.15s;
     color: var(--light-orange);
     font-size: 1.5vw;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
 }
 
 .coord-input:hover {
@@ -176,6 +202,12 @@ h2:hover {
 }
 
 p {
-    font-size: 1.75vw;
+    font-size: 1.25vw;
     margin: 0;
+}
+
+.regular-font {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 2vw;
 }

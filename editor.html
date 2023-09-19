@@ -16,6 +16,7 @@
     <div id="editor-sidebar">
         <button class="editor-button">Clear</button>
         <button class="editor-button" onclick="setRobotSize()">Set Size</button>
+        <button class="editor-button" onclick="addPoint()">Add Point</button>
         <button class="editor-button">Mirror</button>
         <button class="editor-button">Save File</button>
         <fieldset id="coordinate-fieldset">
@@ -32,6 +33,7 @@
     </div>
 
     <div id="editor-bottom-bar">
+        <button class="animation-button" onclick="playAnimation()">▶</button>
         <h2 id="robot-x-text" onclick="navigator.clipboard.writeText(this.innerText.substring(8));">Robot X: </h2>
         <h2 id="robot-y-text" onclick="navigator.clipboard.writeText(this.innerText.substring(8));">Robot Y: </h2>
     </div>
