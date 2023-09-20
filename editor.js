@@ -22,8 +22,8 @@ var ROBOT = {
     width: 35,
     startX: 50,
     startY: 50,
-    posX: 0,
-    posY: 0
+    posX: 50,
+    posY: 50
 }
 
 if (localStorage.getItem("robot-length") != null && localStorage.getItem("robot-width") != null) {
@@ -71,8 +71,8 @@ function drawCanvas() {
     ctx.fillStyle = "orange";
     ctx.fillRect(ROBOT.posX * SCALE, ROBOT.posY * SCALE, ROBOT.length * SCALE, ROBOT.width * SCALE);
 
-    robotTextX.innerHTML = `Robot X: <span class="regular-font">${Math.round(ROBOT.posX * 0.0254 * 1000) / 1000}</span>`;
-    robotTextY.innerHTML = `Robot Y: <span class="regular-font">${Math.round(ROBOT.posY * 0.0254 * 1000) / 1000}</span>`;
+    robotTextX.innerHTML = `Robot X: <span class="regular-font">${Math.round((ROBOT.posX + 28.7499982342) * 0.0254 * 1000) / 1000}</span>`;
+    robotTextY.innerHTML = `Robot Y: <span class="regular-font">${Math.round((ROBOT.posY + 22.4999986181) * 0.0254 * 1000) / 1000}</span>`;
 
     ctx.lineWidth = canvas.width * 0.005;
     ctx.beginPath();
@@ -158,8 +158,8 @@ function doRobotDrag(event) {
     ROBOT.posX = 649 - (((window.innerWidth - event.clientX) / canvas.width) * 649) - ROBOT.length / 2 + initialMouse.x;
     ROBOT.posY = ((((event.clientY) / canvas.height) * 319) - ROBOT.width / 2) - initialMouse.y;
 
-    coordInputX.value = Math.round(ROBOT.posX * 0.0254 * 1000) / 1000;
-    coordInputY.value = Math.round(ROBOT.posY * 0.0254 * 1000) / 1000;
+    coordInputX.value = Math.round((ROBOT.posX + 28.7499982342) * 0.0254 * 1000) / 1000;
+    coordInputY.value = Math.round((ROBOT.posY + 22.4999986181) * 0.0254 * 1000) / 1000;
 
     drawCanvas();
 }
@@ -180,8 +180,8 @@ function setRobotSize() {
 
 function setCoords() {
     if (lastActive == "ROBOT") {
-        ROBOT.posX = coordInputX.value / 0.0254;
-        ROBOT.posY = coordInputY.value / 0.0254;
+        ROBOT.posX = (coordInputX.value) / 0.0254 - 28.7499982342;
+        ROBOT.posY = (coordInputY.value) / 0.0254 - 22.4999986181;
         drawCanvas();
     }
 }
